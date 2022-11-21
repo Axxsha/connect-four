@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Connect Four</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="index.js" charset="utf-8"></script>
+
+    <!-- Font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>CONNECT FOUR</h1>
+
+      <button type="button" id="off">
+        <i class="fa-solid fa-volume-off"></i>
+      </button>
+      <button type="button" id="on" class="active">
+        <i class="fa-solid fa-volume-high"></i>
+      </button>
+    </header>
+
+    <div class="main-container">
+      <div class="game">
+        <h3 class="player">
+          The current player is: <span id="current-player">Player 1</span>
+        </h3>
+
+        <!-- js script generates child divs in .grid -->
+        <div class="grid"></div>
+      </div>
+      <div class="dashboard">
+        <h2 class="result">Result</h2>
+        <h3 class="p1">Player 1<span id="scoreP1">Score:0</span></h3>
+        <h3 class="p2">Player 2<span id="scoreP2">Score:0</span></h3>
+        <div id="new-end">
+          <button type="button" id="end">END GAME</button>
+          <button type="button" id="new">NEW GAME</button>
+        </div>
+      </div>
+      <div id="alert-confirm" class="message-box">
+        <button type="button" class="close-btn">x</button>
+        <h3 class="header"></h3>
+        <div class="confirm-end">
+          <button type="button" id="no">NO</button>
+          <button type="button" id="yes">YES</button>
+        </div>
+      </div>
+
+      <div id="alert-winner" class="message-box">
+        <button type="button" class="close-btn">x</button>
+        <h3 class="winner"></h3>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+  </body>
+</html>

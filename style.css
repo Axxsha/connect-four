@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap");
+
+:root {
+  --p1color: #ffa37c;
+  --p2color: #00c9bc;
+  --color-purple: #86688c;
+}
+body {
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 1.5em;
+  background-color: black;
+  color: #e4ebf8;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+header {
+  margin: 1em auto 5em;
+  position: relative;
+}
+
+header h1 {
+  margin: 0 auto;
+  border: dashed 5px var(--color-purple);
+  width: 50%;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+header button {
+  display: none;
+}
+
+header button.active {
+  position: absolute;
+  top: 1rem;
+  right: 10%;
+  display: block;
+  color: white;
+  background: transparent;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.main-container {
+  padding: 0;
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+  gap: 1.5em;
+  height: 100%;
+  text-align: center;
+}
+
+
+.player-one {
+  background-color: var(--p1color);
+  border-radius: 10px;
+}
+
+.player-two {
+  background-color: var(--p2color);
+  border-radius: 10px;
+}
+
+#current-player {
+  color: var(--p1color);
+}
+
+.grid {
+  background-color: var(--color-purple);
+  border: 1px solid;
+  height: 360px;
+  width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  border: none;
+}
+
+.grid div {
+  height: 60px;
+  width: 60px;
+}
+
+@media screen and (max-width: 650px) {
+  .grid {
+    height: 240px;
+    width: 280px;
+  }
+
+  .grid div {
+    height: 40px;
+    width: 40px;
+  }
+
+  .player {
+    font-size: 1.4rem;
+  }
+}
+
+.dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5em;
+  height: 100%;
+  text-align: center;
+}
+
+.result {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.p1 {
+  color: var(--p1color);
+}
+
+.p2 {
+  color: var(--p2color);
+}
+
+#new-end {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: 1em auto 0;
+}
+
+#new-end button {
+  background: #86688c;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#new-end button:hover {
+  filter: saturate(80%);
+  filter: contrast(50%);
+}
+
+@media screen and (max-width: 650px) {
+  .result {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  .p1,
+  .p2 {
+    font-size: 1.2rem;
+  }
+  #new-end {
+    margin-top: 0.8em;
+    width: 100%;
+  }
+  #new-end button {
+    padding: 0.5em;
+  }
+}
+
+.message-box {
+  display: none;
+}
+
+.message-box.active {
+  display: block;
+  position: absolute;
+  width: 400px;
+  min-height: 200px;
+  background: white;
+  color: black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.message-box .close-btn {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.2em 0.5em;
+  border: 2px solid black;
+  color: red;
+  position: absolute;
+  right: -5%;
+  top: -10%;
+  transform: translate(10%, 10%);
+}
+
+#alert-winner {
+  background: black;
+  border: 5px solid var(--color-purple);
+}
+
+#alert-confirm .confirm-end {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.confirm-end button {
+  padding: 0.8em;
+  width: 80px;
+  color: white;
+  background-color: black;
+  font-weight: 600;
+}
+
+.winner {
+  animation-name: grow-and-shrink;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 3s;
+}
+
+@keyframes grow-and-shrink {
+  25% {
+    font-size: 10px;
+    opacity: 0.2;
+  }
+  50% {
+    font-size: 1.2em;
+    opacity: 0.5;
+  }
+  75% {
+    font-size: 10px;
+    opacity: 0.2;
+  }
+}
+
+#scoreP1,
+#scoreP2 {
+  margin-left: 3em;
+}
